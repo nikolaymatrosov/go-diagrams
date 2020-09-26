@@ -12,11 +12,6 @@ var Iot = &iotContainer{
 	path: "assets/alibabacloud/iot",
 }
 
-func (c *iotContainer) IotInternetDeviceId(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/iot/iot-internet-device-id.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *iotContainer) IotLinkWan(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/iot/iot-link-wan.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -29,5 +24,10 @@ func (c *iotContainer) IotMobileConnectionPackage(opts ...diagram.NodeOption) *d
 
 func (c *iotContainer) IotPlatform(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/iot/iot-platform.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *iotContainer) IotInternetDeviceId(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/iot/iot-internet-device-id.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

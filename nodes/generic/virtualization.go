@@ -12,6 +12,11 @@ var Virtualization = &virtualizationContainer{
 	path: "assets/generic/virtualization",
 }
 
+func (c *virtualizationContainer) Xen(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/generic/virtualization/xen.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *virtualizationContainer) Virtualbox(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/generic/virtualization/virtualbox.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -19,10 +24,5 @@ func (c *virtualizationContainer) Virtualbox(opts ...diagram.NodeOption) *diagra
 
 func (c *virtualizationContainer) Vmware(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/generic/virtualization/vmware.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *virtualizationContainer) Xen(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/generic/virtualization/xen.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

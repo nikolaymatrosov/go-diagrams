@@ -12,11 +12,6 @@ var Storage = &storageContainer{
 	path: "assets/gcp/storage",
 }
 
-func (c *storageContainer) Filestore(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/storage/filestore.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *storageContainer) PersistentDisk(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/storage/persistent-disk.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -24,5 +19,10 @@ func (c *storageContainer) PersistentDisk(opts ...diagram.NodeOption) *diagram.N
 
 func (c *storageContainer) Storage(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/storage/storage.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *storageContainer) Filestore(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/storage/filestore.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

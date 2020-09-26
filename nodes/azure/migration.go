@@ -12,6 +12,11 @@ var Migration = &migrationContainer{
 	path: "assets/azure/migration",
 }
 
+func (c *migrationContainer) RecoveryServicesVaults(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/migration/recovery-services-vaults.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *migrationContainer) DatabaseMigrationServices(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/migration/database-migration-services.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -19,10 +24,5 @@ func (c *migrationContainer) DatabaseMigrationServices(opts ...diagram.NodeOptio
 
 func (c *migrationContainer) MigrationProjects(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/migration/migration-projects.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *migrationContainer) RecoveryServicesVaults(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/migration/recovery-services-vaults.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

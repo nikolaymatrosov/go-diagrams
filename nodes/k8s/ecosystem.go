@@ -12,6 +12,11 @@ var Ecosystem = &ecosystemContainer{
 	path: "assets/k8s/ecosystem",
 }
 
+func (c *ecosystemContainer) Kustomize(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/ecosystem/kustomize.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *ecosystemContainer) Helm(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/ecosystem/helm.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -19,10 +24,5 @@ func (c *ecosystemContainer) Helm(opts ...diagram.NodeOption) *diagram.Node {
 
 func (c *ecosystemContainer) Krew(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/ecosystem/krew.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *ecosystemContainer) Kustomize(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/ecosystem/kustomize.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

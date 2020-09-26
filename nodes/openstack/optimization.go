@@ -12,16 +12,6 @@ var Optimization = &optimizationContainer{
 	path: "assets/openstack/optimization",
 }
 
-func (c *optimizationContainer) Congress(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/operations/optimization/congress.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *optimizationContainer) Rally(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/operations/optimization/rally.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *optimizationContainer) Vitrage(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/operations/optimization/vitrage.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -29,5 +19,15 @@ func (c *optimizationContainer) Vitrage(opts ...diagram.NodeOption) *diagram.Nod
 
 func (c *optimizationContainer) Watcher(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/operations/optimization/watcher.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *optimizationContainer) Congress(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/operations/optimization/congress.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *optimizationContainer) Rally(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/operations/optimization/rally.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

@@ -12,16 +12,6 @@ var Orchestration = &orchestrationContainer{
 	path: "assets/openstack/orchestration",
 }
 
-func (c *orchestrationContainer) Zaqar(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/orchestration/zaqar.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *orchestrationContainer) Blazar(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/orchestration/blazar.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *orchestrationContainer) Heat(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/orchestration/heat.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -34,5 +24,15 @@ func (c *orchestrationContainer) Mistral(opts ...diagram.NodeOption) *diagram.No
 
 func (c *orchestrationContainer) Senlin(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/orchestration/senlin.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *orchestrationContainer) Zaqar(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/orchestration/zaqar.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *orchestrationContainer) Blazar(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/orchestration/blazar.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

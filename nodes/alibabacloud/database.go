@@ -12,33 +12,13 @@ var Database = &databaseContainer{
 	path: "assets/alibabacloud/database",
 }
 
-func (c *databaseContainer) DatabaseBackupService(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/database-backup-service.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *databaseContainer) RelationalDatabaseService(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/relational-database-service.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *databaseContainer) ApsaradbMongodb(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-mongodb.png")}, c.opts, opts)
+func (c *databaseContainer) ApsaradbPolardb(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-polardb.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
 func (c *databaseContainer) ApsaradbRedis(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-redis.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *databaseContainer) DataManagementService(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/data-management-service.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *databaseContainer) DataTransmissionService(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/data-transmission-service.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
@@ -57,8 +37,13 @@ func (c *databaseContainer) ApsaradbHbase(opts ...diagram.NodeOption) *diagram.N
 	return diagram.NewNode(nopts...)
 }
 
-func (c *databaseContainer) ApsaradbPpas(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-ppas.png")}, c.opts, opts)
+func (c *databaseContainer) ApsaradbMemcache(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-memcache.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *databaseContainer) ApsaradbMongodb(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-mongodb.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
@@ -67,13 +52,18 @@ func (c *databaseContainer) ApsaradbOceanbase(opts ...diagram.NodeOption) *diagr
 	return diagram.NewNode(nopts...)
 }
 
-func (c *databaseContainer) ApsaradbPolardb(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-polardb.png")}, c.opts, opts)
+func (c *databaseContainer) ApsaradbSqlserver(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-sqlserver.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
-func (c *databaseContainer) HybriddbForMysql(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/hybriddb-for-mysql.png")}, c.opts, opts)
+func (c *databaseContainer) DataTransmissionService(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/data-transmission-service.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *databaseContainer) DatabaseBackupService(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/database-backup-service.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
@@ -82,8 +72,18 @@ func (c *databaseContainer) DisributeRelationalDatabaseService(opts ...diagram.N
 	return diagram.NewNode(nopts...)
 }
 
-func (c *databaseContainer) ApsaradbMemcache(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-memcache.png")}, c.opts, opts)
+func (c *databaseContainer) HybriddbForMysql(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/hybriddb-for-mysql.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *databaseContainer) ApsaradbPpas(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-ppas.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *databaseContainer) RelationalDatabaseService(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/relational-database-service.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
@@ -92,7 +92,7 @@ func (c *databaseContainer) ApsaradbPostgresql(opts ...diagram.NodeOption) *diag
 	return diagram.NewNode(nopts...)
 }
 
-func (c *databaseContainer) ApsaradbSqlserver(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/apsaradb-sqlserver.png")}, c.opts, opts)
+func (c *databaseContainer) DataManagementService(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/alibabacloud/database/data-management-service.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

@@ -12,11 +12,6 @@ var Compute = &computeContainer{
 	path: "assets/gcp/compute",
 }
 
-func (c *computeContainer) ContainerOptimizedOs(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/container-optimized-os.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *computeContainer) Functions(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/functions.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -49,5 +44,10 @@ func (c *computeContainer) AppEngine(opts ...diagram.NodeOption) *diagram.Node {
 
 func (c *computeContainer) ComputeEngine(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/compute-engine.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *computeContainer) ContainerOptimizedOs(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/container-optimized-os.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

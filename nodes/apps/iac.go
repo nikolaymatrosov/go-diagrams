@@ -12,6 +12,11 @@ var Iac = &iacContainer{
 	path: "assets/apps/iac",
 }
 
+func (c *iacContainer) Terraform(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/apps/iac/terraform.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *iacContainer) Ansible(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/apps/iac/ansible.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -24,10 +29,5 @@ func (c *iacContainer) Atlantis(opts ...diagram.NodeOption) *diagram.Node {
 
 func (c *iacContainer) Awx(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/apps/iac/awx.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *iacContainer) Terraform(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/apps/iac/terraform.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

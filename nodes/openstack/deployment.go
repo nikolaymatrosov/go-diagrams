@@ -12,6 +12,16 @@ var Deployment = &deploymentContainer{
 	path: "assets/openstack/deployment",
 }
 
+func (c *deploymentContainer) Chef(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/lifecyclemanagement/deployment/chef.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *deploymentContainer) Helm(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/lifecyclemanagement/deployment/helm.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *deploymentContainer) Kolla(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/lifecyclemanagement/deployment/kolla.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -29,15 +39,5 @@ func (c *deploymentContainer) Ansible(opts ...diagram.NodeOption) *diagram.Node 
 
 func (c *deploymentContainer) Charms(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/lifecyclemanagement/deployment/charms.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *deploymentContainer) Chef(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/lifecyclemanagement/deployment/chef.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *deploymentContainer) Helm(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/openstack/lifecyclemanagement/deployment/helm.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

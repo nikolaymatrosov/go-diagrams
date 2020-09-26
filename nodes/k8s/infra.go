@@ -12,11 +12,6 @@ var Infra = &infraContainer{
 	path: "assets/k8s/infra",
 }
 
-func (c *infraContainer) Etcd(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/infra/etcd.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *infraContainer) Master(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/infra/master.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -24,5 +19,10 @@ func (c *infraContainer) Master(opts ...diagram.NodeOption) *diagram.Node {
 
 func (c *infraContainer) Node(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/infra/node.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *infraContainer) Etcd(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/k8s/infra/etcd.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

@@ -12,11 +12,6 @@ var Cost = &costContainer{
 	path: "assets/aws/cost",
 }
 
-func (c *costContainer) CostAndUsageReport(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/cost/cost-and-usage-report.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *costContainer) CostExplorer(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/cost/cost-explorer.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -34,5 +29,10 @@ func (c *costContainer) SavingsPlans(opts ...diagram.NodeOption) *diagram.Node {
 
 func (c *costContainer) Budgets(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/cost/budgets.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *costContainer) CostAndUsageReport(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/cost/cost-and-usage-report.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
